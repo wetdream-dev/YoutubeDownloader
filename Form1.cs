@@ -103,7 +103,6 @@ namespace YoutubeDownloader
                 var video = await youtube.Videos.GetAsync(videoId);
                 var thumbnail = video.Thumbnails.GetWithHighestResolution();
 
-                await LoadThumbnailAsync(thumbnail.Url);
                 lblTitle.Text = $"{video.Title}";
                 
                 lblTitle.Tag = video;
