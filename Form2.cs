@@ -14,7 +14,7 @@ namespace YoutubeDownloader
 {
     public partial class Form2 : Form
     {
-        private string currentVersion = "1.0.0";
+        private string currentVersion = "1.0.1";
         private string pastebinUrl = "https://pastebin.com/raw/N9mWUyzm";
 
         public Form2()

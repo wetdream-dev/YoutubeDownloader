@@ -102,9 +102,14 @@ namespace YoutubeDownloader
                 var videoId = VideoId.Parse(url);
                 var video = await youtube.Videos.GetAsync(videoId);
                 var thumbnail = video.Thumbnails.GetWithHighestResolution();
+                var streamManifest = await youtube.Videos.Streams.GetManifestAsync(videoId);
+                var streamInfo = streamManifest.GetMuxedStreams().GetWithHighestVideoQuality();
+                long fileSizeInBytes = streamInfo.Size.Bytes;
+                double fileSizeInMB = fileSizeInBytes / (1024.0 * 1024.0);
+                await LoadThumbnailAsync(thumbnail.Url);
 
                 lblTitle.Text = $"{video.Title}";
-                
+                lblSize.Text = $"{fileSizeInMB:F2} MB";
                 lblTitle.Tag = video;
                 lblLength.Text = $"{video.Duration}";
                 pictureIconYT.Visible = true;
@@ -333,7 +338,7 @@ namespace YoutubeDownloader
 
         private string RemoveSpecialCharacter(string text)
         {
-            string[] specialCharacters = { "/", ":","*","?","|","<",">"};
+            string[] specialCharacters = { "/", ":", "*", "?", "|", "<", ">" };
 
             foreach (var character in specialCharacters)
             {

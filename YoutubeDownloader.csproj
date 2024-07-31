@@ -9,6 +9,8 @@
     <ApplicationIcon>youtube-player-icon-on-transparent-PNG-fix.ico</ApplicationIcon>
     <Title>YoutubeDownloader</Title>
     <Copyright></Copyright>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

@@ -158,9 +158,9 @@
             label9.AutoSize = true;
             label9.Location = new Point(3, 3);
             label9.Name = "label9";
-            label9.Size = new Size(153, 45);
+            label9.Size = new Size(261, 45);
             label9.TabIndex = 0;
-            label9.Text = "💠 Changes on 13 May 2024\r\n\r\n   ◈ Nothing";
+            label9.Text = "💠 Changes on 31 July 2024\r\n\r\n   ◈ [Fix] File size is not showing on video details";
             // 
             // linkLabel2
             // 
